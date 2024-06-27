@@ -18,37 +18,7 @@
         gap: 1rem;
         justify-content: space-between;
       }
-      .btn_div {
-        margin-top: 2rem;
-        .cancle_button {
-          height: 2rem;
-          width: fit-content;
-          background: transparent;
-          border: 2px solid var(--color-begni);
-          border-radius: 0.5rem;
-          color: var(--color-begni);
-          font-weight: 600;
-          cursor: pointer;
-          &:hover {
-            background: var(--color-begni);
-            color: var(--color-primary);
-          }
-        }
-        .save_button {
-          height: 2rem;
-          width: fit-content;
-          background: transparent;
-          border: 2px solid var(--color-gulab);
-          border-radius: 0.5rem;
-          color: var(--color-gulab);
-          font-weight: 600;
-          cursor: pointer;
-          &:hover {
-            background: var(--color-gulab);
-            color: var(--color-primary);
-          }
-        }
-      }
+     
       button {
         width: 40%;
       }
@@ -73,6 +43,39 @@
         -moz-box-shadow: 3px 23px 77px -10px rgba(0, 0, 0, 0.75);
         box-shadow: 3px 23px 77px -10px rgba(0, 0, 0, 0.75);
         outline: none;
+      }
+    }
+    .btn_div {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      .cancle_button {
+        height: 2rem;
+        width: fit-content;
+        background: transparent;
+        border: 2px solid var(--color-begni);
+        border-radius: 0.5rem;
+        color: var(--color-begni);
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          background: var(--color-begni);
+          color: var(--color-primary);
+        }
+      }
+      .save_button {
+        height: 2rem;
+        width: fit-content;
+        background: transparent;
+        border: 2px solid var(--color-gulab);
+        border-radius: 0.5rem;
+        color: var(--color-gulab);
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          background: var(--color-gulab);
+          color: var(--color-primary);
+        }
       }
     }
   }

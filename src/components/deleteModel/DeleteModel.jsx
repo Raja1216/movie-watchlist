@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { removeMovie } from "../../features/movies/moviesSlice";
 import { useNavigate } from "react-router-dom";
 
+
 Modal.setAppElement("#root");
 
 const DeleteModal = ({ isOpen, onRequestClose, movie }) => {
