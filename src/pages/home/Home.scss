@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+    .breadcrumb{
+        border-radius: .5rem;
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        color: var(--color-primary);
+        align-items: center;
+        h1{
+            margin:0;
+            color: red;
+            text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+        }
+    }
+    .page_body{
+        border-radius: .5rem;
+        color: var(--color-primary);
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+}

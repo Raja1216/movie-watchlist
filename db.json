@@ -1,0 +1,24 @@
+{
+  "movies": [
+    {
+      "title": "Inception",
+      "description": "A mind-bending thriller by Christopher Nolan.",
+      "releaseYear": 2010,
+      "genre": "Sci-Fi",
+      "watched": false,
+      "rating": 5,
+      "review": "Amazing movie with a great plot twist.",
+      "id": "1"
+    },
+    {
+      "title": "retgergh",
+      "description": "dfhgefhbdgdfgdfgdfgdfgdfgdgort jynrtklhkljentyjklhneotyjhoejrop t;hjioperjt\nhoperwmothmoeprthjoperjthiopj\nerotmhlerjthopjertopheoprtmherjk\ntpohjer0thopermtophierjkthoper\ntophjpioertthoerttohjerthioert",
+      "releaseYear": "345643434343",
+      "genre": "gfdg",
+      "watched": false,
+      "rating": "4",
+      "review": "jhgjhggj",
+      "id": "c4c7"
+    }
+  ]
+}

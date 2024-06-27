@@ -1,0 +1,53 @@
+.card_main {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 15rem;
+  gap: 0.5rem;
+  -webkit-box-shadow: 5px 18px 34px 14px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 18px 34px 14px rgba(0,0,0,0.75);
+  box-shadow: 5px 18px 34px 14px rgba(0,0,0,0.75);
+  border: 1px solid var(--color-primary);
+  .card_header {
+    display: flex;
+    justify-content: space-between;
+    .card_title {
+      width: 60%;
+      word-wrap: break-word;
+      word-break: break-all;
+      font-size: var(--font-learge);
+    }
+  }
+  .card_body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: var(--font-medium);
+    .card_desc{
+        
+    }
+    .card_oth_details {
+      display: flex;
+      justify-content: space-between;
+      label{
+        font-weight: 600;
+      }
+      .card_r_date{
+        display: flex;
+        flex-direction: column;
+      }
+      .card_genre{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .card_ratings{
+        color: var(--color-gold);
+    }
+  }
+  .card_footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}

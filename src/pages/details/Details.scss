@@ -1,0 +1,29 @@
+.movie_details_main{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 80%;
+    .m_details_body{
+        display: flex;
+        justify-content: space-between;
+    }
+    .m_details_foot{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .m_d_b_r{
+        display: flex;
+    }
+    .m_d_b_l{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        div{
+            display: flex;
+        }
+        .card_ratings{
+            color: var(--color-gold);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.navbar_main {
+  color: var(--color-primary);
+  font-size: var(--font-learge);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    li {
+      a {
+        text-decoration: none;
+        color: white;
+        &:hover{
+            color: var(--color-secondery);
+        }
+      }
+    }
+  }
+}

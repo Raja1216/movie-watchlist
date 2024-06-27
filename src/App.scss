@@ -1,0 +1,51 @@
+:root {
+  --color-primary: white;
+  --color-secondery: rgb(5, 153, 176);
+  --font-learge: 1.5rem;
+  --font-medium: 1rem;
+  --font-small: .5rem;
+  --color-gulab: rgb(210, 23, 104);
+  --transition-duration: 500ms;
+  --transition-easing: ease-out;
+  --color-gold: rgb(255, 149, 0);
+  --color-begni: rgb(109, 4, 157);
+  --color-info: rgb(27, 125, 223);
+  --color-kamla: rgb(245, 103, 32);
+}
+
+.main {
+  background: url("../public/Images/background1.png") no-repeat center center
+    fixed;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .nav_bar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .m_body {
+    padding: 0 2rem;
+    height: 100%;
+  }
+}
+
+.glass_bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+a{
+  text-decoration: none;
+  color: var(--color-primary);
+}
