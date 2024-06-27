@@ -1,4 +1,3 @@
-
 import "./App.scss";
 import Navbar from "./components/navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -12,9 +11,9 @@ function App() {
           <Navbar />
         </div>
         <div className="m_body">
-          <Routes>
-            <Route path="*" element={<MovieRouter />} />
-          </Routes>
+            <Routes>
+              <Route path="*" element={<MovieRouter />} />
+            </Routes>
         </div>
       </div>
     </>

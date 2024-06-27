@@ -18,8 +18,8 @@ const Details = ({ history }) => {
   const dispatch = useDispatch();
 
   const movie = useSelector((state) => state.movies.selectedMovie);
-  const status = useSelector((state) => state.movies.status);
-  const error = useSelector((state) => state.movies.error);
+  const loading = useSelector((state) => state.movies.loading);
+
 
   const [addEditModalOpen, setAddEditModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -62,92 +62,96 @@ const Details = ({ history }) => {
         <div className="add_btn_sec"></div>
       </div>
       <div className="page_body glass_bg">
-        {status === "loading" ?? <div>Loading...</div>}
-        {status === "failed" ?? <div>Error: {error}</div>}
-        {!movie ? (
-          <div>Movie not found</div>
+        {loading ? (
+          <h2>Loading...</h2>
         ) : (
           <>
-            <div className="movie_details_main">
-              <div className="m_details_body">
-                <div className="m_d_b_l">
-                  <h2>{movie.title}</h2>
-                  <p>{movie.description}</p>
-                  <div>
-                    <b>Rating:</b> &nbsp; &nbsp;
-                    <div className="card_ratings">
-                      <RatingStars rating={movie.rating} />
+            {!movie ? (
+              <div>Movie not found</div>
+            ) : (
+              <>
+                <div className="movie_details_main">
+                  <div className="m_details_body">
+                    <div className="m_d_b_l">
+                      <h2>{movie.title}</h2>
+                      <p>{movie.description}</p>
+                      <div>
+                        <b>Rating:</b> &nbsp; &nbsp;
+                        <div className="card_ratings">
+                          <RatingStars rating={movie.rating} />
+                        </div>
+                      </div>
+                      <div>
+                        <b>Release Year:</b> &nbsp; &nbsp; {movie.releaseYear}
+                      </div>
+                      <div>
+                        <b>Genre:</b> &nbsp; &nbsp; {movie.genre}
+                      </div>
+                      <div>
+                        <b>Review:</b> &nbsp; &nbsp; {movie.review}
+                      </div>
+                    </div>
+                    <div className="m_d_b_r">
+                      <i
+                        className="fa-solid fa-pencil"
+                        style={{ color: "#03fb76", cursor: "pointer" }}
+                        onClick={() => openMovieModal(movie)}
+                      ></i>
+                      &nbsp;
+                      <i className="fa-solid fa-grip-lines-vertical"></i>
+                      &nbsp;
+                      <i
+                        className="fa-solid fa-trash-can"
+                        style={{ color: "#dc043a", cursor: "pointer" }}
+                        onClick={() => openDeleteModal(movie)}
+                      ></i>
                     </div>
                   </div>
-                  <div>
-                    <b>Release Year:</b> &nbsp; &nbsp; {movie.releaseYear}
-                  </div>
-                  <div>
-                    <b>Genre:</b> &nbsp; &nbsp; {movie.genre}
-                  </div>
-                  <div>
-                    <b>Review:</b> &nbsp; &nbsp; {movie.review}
+                  <hr style={{ margin: 0 }} />
+                  <div className="m_details_foot">
+                    <Button
+                      bg={"info"}
+                      title={"Rate"}
+                      icon={"fa-solid fa-star"}
+                      method={openRateModal}
+                      methodValue={movie}
+                    />
+                    {movie.watched ? (
+                      <Button
+                        bg={"kamla"}
+                        title={"Unwatched"}
+                        icon={"fa-solid fa-clock"}
+                        method={handelWatched}
+                        methodValue={movie}
+                      />
+                    ) : (
+                      <Button
+                        bg={"begni"}
+                        title={"Watched"}
+                        icon={"fa-solid fa-circle-check"}
+                        method={handelWatched}
+                        methodValue={movie}
+                      />
+                    )}
                   </div>
                 </div>
-                <div className="m_d_b_r">
-                  <i
-                    className="fa-solid fa-pencil"
-                    style={{ color: "#03fb76", cursor: "pointer" }}
-                    onClick={() => openMovieModal(movie)}
-                  ></i>
-                  &nbsp;
-                  <i className="fa-solid fa-grip-lines-vertical"></i>
-                  &nbsp;
-                  <i
-                    className="fa-solid fa-trash-can"
-                    style={{ color: "#dc043a", cursor: "pointer" }}
-                    onClick={() => openDeleteModal(movie)}
-                  ></i>
-                </div>
-              </div>
-              <hr style={{margin:0}}/>
-              <div className="m_details_foot">
-                <Button
-                  bg={"info"}
-                  title={"Rate"}
-                  icon={"fa-solid fa-star"}
-                  method={openRateModal}
-                  methodValue={movie}
+                <AddEditModel
+                  isOpen={addEditModalOpen}
+                  onRequestClose={() => setAddEditModalOpen(false)}
+                  movie={movie}
                 />
-                {movie.watched ? (
-                  <Button
-                    bg={"kamla"}
-                    title={"Unwatched"}
-                    icon={"fa-solid fa-clock"}
-                    method={handelWatched}
-                    methodValue={movie}
-                  />
-                ) : (
-                  <Button
-                    bg={"begni"}
-                    title={"Watched"}
-                    icon={"fa-solid fa-circle-check"}
-                    method={handelWatched}
-                    methodValue={movie}
-                  />
-                )}
-              </div>
-            </div>
-            <AddEditModel
-              isOpen={addEditModalOpen}
-              onRequestClose={() => setAddEditModalOpen(false)}
-              movie={movie}
-            />
-            <DeleteModal
-              isOpen={deleteModalOpen}
-              onRequestClose={() => setDeleteModalOpen(false)}
-              movie={movie}
-            />
-            <RateModal
-              isOpen={rateModalOpen}
-              onRequestClose={() => setRateModalOpen(false)}
-              movie={movie}
-            />
+                <DeleteModal
+                  isOpen={deleteModalOpen}
+                  onRequestClose={() => setDeleteModalOpen(false)}
+                  movie={movie}
+                />
+                <RateModal
+                  isOpen={rateModalOpen}
+                  onRequestClose={() => setRateModalOpen(false)}
+                  movie={movie}
+                />
+              </>
+            )}
           </>
         )}
       </div>

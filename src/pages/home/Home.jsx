@@ -11,7 +11,6 @@ import RateModal from "../../components/rateModel/RateModel";
 const Home = () => {
   const movies = useSelector((state) => state.movies.movies);
   const loading = useSelector((state) => state.movies.loading);
-  console.log(loading);
   const dispatch = useDispatch();
   const [addEditModalOpen, setAddEditModalOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
