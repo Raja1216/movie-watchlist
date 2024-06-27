@@ -10,6 +10,8 @@ import RateModal from "../../components/rateModel/RateModel";
 
 const Home = () => {
   const movies = useSelector((state) => state.movies.movies);
+  const loading = useSelector((state) => state.movies.loading);
+  console.log(loading);
   const dispatch = useDispatch();
   const [addEditModalOpen, setAddEditModalOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -45,7 +47,10 @@ const Home = () => {
     <>
       <div className="container">
         <div className="breadcrumb glass_bg">
-          <div className="brd_titles"> <span style={{color: "gray" }}>Home/</span></div>
+          <div className="brd_titles">
+            {" "}
+            <span style={{ color: "gray" }}>Home/</span>
+          </div>
           <h1>Home</h1>
           <div className="add_btn_sec">
             <Button
@@ -57,16 +62,22 @@ const Home = () => {
           </div>
         </div>
         <div className="page_body glass_bg">
-          {movies.map((movie, i) => (
-            <Card
-              key={i}
-              movie={movie}
-              openRateModal={openRateModal}
-              handelWatched={handelWatched}
-              openDeleteModal={openDeleteModal}
-              openMovieModal={openMovieModal}
-            />
-          ))}
+          {loading ? (
+            <h2>Loading...</h2>
+          ) : (
+            <>
+              {movies.map((movie, i) => (
+                <Card
+                  key={i}
+                  movie={movie}
+                  openRateModal={openRateModal}
+                  handelWatched={handelWatched}
+                  openDeleteModal={openDeleteModal}
+                  openMovieModal={openMovieModal}
+                />
+              ))}
+            </>
+          )}
         </div>
       </div>
 
